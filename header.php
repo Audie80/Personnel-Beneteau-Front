@@ -26,7 +26,7 @@
 
     <header class="mb-5">
         <nav class="navbar navbar-expand-lg navbar-light bg-white mb-4 fixed-top shadow-sm">
-          <a class="navbar-brand" href="#"><img src="" alt="Logo de l'entreprise Beneteau"></a>
+          <a class="navbar-brand" href="https://www.beneteau.com/fr"><img src="https://www.beneteau.com/sites/all/themes/boron/images/logo_header_dark-blue.svg" alt="Logo de l'entreprise Beneteau"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -49,7 +49,8 @@
                 <a class="nav-link disabled">Clients</a>
               </li>
             </ul>
-            <a href="/personnel-beneteau-front" class="btn btn-info font-weight-bold ml-5" role="button">Retour à l'accueil</a>
+            <a href="/" class="btn btn-info font-weight-bold ml-5" role="button">Retour à l'accueil</a>
+            <!--déploiement local <a href="/personnel-beneteau-front" class="btn btn-info font-weight-bold ml-5" role="button">Retour à l'accueil</a> -->
           </div>
         </nav>
     </header>
