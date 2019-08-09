@@ -22,4 +22,5 @@ Object.defineProperty(myInit, 'method', {
 
 
 // Url de l'API
-let baseUrl = 'http://localhost:3000/api/';
+//let baseUrl = 'http://localhost:3000/api/'; //pour déploiement local
+let baseUrl = 'http://app-d2188754-becd-40a6-af9a-97795c470df7.cleverapps.io/api/';
