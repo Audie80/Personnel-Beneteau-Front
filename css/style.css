@@ -1,0 +1,29 @@
+@font-face {
+ font-family: "BrandonRegular";
+ src: url("/fonts/BrandonText-Regular.otf") format("otf");
+}
+
+* {
+  font-family: "BrandonRegular", sans-serif !important;
+}
+
+h1, h2, p, a, th, td, span {
+    color: #0A2240 !important;
+}
+
+.btn-info {
+    background-color: #0080A5 !important;
+    color: white !important;
+}
+
+.btn-info:hover {
+    background-color: #0A2240 !important;
+}
+
+.bg-info {
+    background-color: #0A2240 !important;
+}
+
+.far {
+    font-family: "Font Awesome 5 Free" !important;
+}
