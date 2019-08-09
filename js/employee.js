@@ -67,136 +67,77 @@
     let addCells = () => {
         let idCell;
 
+        let writeCell = (nb, month) => {
+            if (nb < 10) {
+                idCell = 'td_2019-' + month + '-0' + nb;
+            } else {
+                idCell = 'td_2019-' + month + '-' + nb;
+            }
+            let cell = `<td class="tdDate" id="` + idCell + `">
+            <a class="tdDate" id="` + idCell + `" data-toggle="collapse" href="#form-popup" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <i class="far fa-square"></i>
+            </a></td>`;
+            dateRow.innerHTML += cell;
+        }
+
         // Janvier
         for (let i = 1 ; i <= 31 ; i++) {
-            if (i < 10) {
-                idCell = 'td_2019-01-0' + i;
-            } else {
-                idCell = 'td_2019-01-' + i;
-            }
-            let cell = `<td class="tdDate" id="` + idCell + `" style="cursor:pointer"></td>`;
-            dateRow.innerHTML += cell;
+            writeCell(i, '01');
         }
 
         // Février
         for (let i = 1; i <= 28; i++) {
-            if (i < 10) {
-                idCell = 'td_2019-02-0' + i;
-            } else {
-                idCell = 'td_2019-02-' + i;
-            }
-            let cell = `<td class="tdDate" id="` + idCell + `" style="cursor:pointer"></td>`;
-            dateRow.innerHTML += cell;
+            writeCell(i, '02');
         }
 
         // Mars
         for (let i = 1; i <= 31; i++) {
-            if (i < 10) {
-                idCell = 'td_2019-03-0' + i;
-            } else {
-                idCell = 'td_2019-03-' + i;
-            }
-            let cell = `<td class="tdDate" id="` + idCell + `" style="cursor:pointer"></td>`;
-            dateRow.innerHTML += cell;
+            writeCell(i, '03');
         }
 
         // Avril
         for (let i = 1; i <= 30; i++) {
-            if (i < 10) {
-                idCell = 'td_2019-04-0' + i;
-            } else {
-                idCell = 'td_2019-04-' + i;
-            }
-            let cell = `<td class="tdDate" id="` + idCell + `" style="cursor:pointer"></td>`;
-            dateRow.innerHTML += cell;
+            writeCell(i, '04');
         }
 
         // Mai
         for (let i = 1; i <= 31; i++) {
-            if (i < 10) {
-                idCell = 'td_2019-05-0' + i;
-            } else {
-                idCell = 'td_2019-05-' + i;
-            }
-            let cell = `<td class="tdDate" id="` + idCell + `" style="cursor:pointer"></td>`;
-            dateRow.innerHTML += cell;
+            writeCell(i, '05');
         }
 
         // Juin
         for (let i = 1; i <= 30; i++) {
-            if (i < 10) {
-                idCell = 'td_2019-06-0' + i;
-            } else {
-                idCell = 'td_2019-06-' + i;
-            }
-            let cell = `<td class="tdDate" id="` + idCell + `" style="cursor:pointer"></td>`;
-            dateRow.innerHTML += cell;
+            writeCell(i, '06');
         }
         
         // Juillet
         for (let i = 1; i <= 31; i++) {
-            if (i < 10) {
-                idCell = 'td_2019-07-0' + i;
-            } else {
-                idCell = 'td_2019-07-' + i;
-            }
-            let cell = `<td class="tdDate" id="` + idCell + `" style="cursor:pointer"></td>`;
-            dateRow.innerHTML += cell;
+            writeCell(i, '07');
         }
 
         // Août
         for (let i = 1; i <= 31; i++) {
-            if (i < 10) {
-                idCell = 'td_2019-08-0' + i;
-            } else {
-                idCell = 'td_2019-08-' + i;
-            }
-            let cell = `<td class="tdDate" id="` + idCell + `" style="cursor:pointer"></td>`;
-            dateRow.innerHTML += cell;
+            writeCell(i, '08');
         }
 
         // Septembre
         for (let i = 1; i <= 30; i++) {
-            if (i < 10) {
-                idCell = 'td_2019-09-0' + i;
-            } else {
-                idCell = 'td_2019-09-' + i;
-            }
-            let cell = `<td class="tdDate" id="` + idCell + `" style="cursor:pointer"></td>`;
-            dateRow.innerHTML += cell;
+            writeCell(i, '09');
         }
 
         // Octobre
         for (let i = 1; i <= 31; i++) {
-            if (i < 10) {
-                idCell = 'td_2019-10-0' + i;
-            } else {
-                idCell = 'td_2019-10-' + i;
-            }
-            let cell = `<td class="tdDate" id="` + idCell + `" style="cursor:pointer"></td>`;
-            dateRow.innerHTML += cell;
+            writeCell(i, '10');
         }
 
         // Novembre
         for (let i = 1; i <= 30; i++) {
-            if (i < 10) {
-                idCell = 'td_2019-11-0' + i;
-            } else {
-                idCell = 'td_2019-11-' + i;
-            }
-            let cell = `<td class="tdDate" id="` + idCell + `" style="cursor:pointer"></td>`;
-            dateRow.innerHTML += cell;
+            writeCell(i, '11');
         }
 
         // Décembre
         for (let i = 1; i <= 31; i++) {
-            if (i < 10) {
-                idCell = 'td_2019-12-0' + i;
-            } else {
-                idCell = 'td_2019-12-' + i;
-            }
-            let cell = `<td class="tdDate" id="` + idCell + `" style="cursor:pointer"></td>`;
-            dateRow.innerHTML += cell;
+            writeCell(i, '12');
         }
     }
 
@@ -228,13 +169,13 @@
     //Déclaration de la méthode qui ouvre la pop-up de modification
     popUp = (element) => {
 
-        document.getElementById("formLeave").style.display = "block";
-
         // Si c'est une case sans congé, on affiche juste le bouton "Ajouter"
         if (element.classList.length == 1) {
+            popupCreateButton.style.display = "inline";
             popupEditButton.style.display = "none";
             popupDeleteButton.style.display = "none";
         } else {
+            popupCreateButton.style.display = "none";
             popupEditButton.style.display = "inline";
             popupDeleteButton.style.display = "inline";
 

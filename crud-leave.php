@@ -8,13 +8,13 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" for="beginningdate">Date de début </label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="date" name="beginningdate" id="beginningdate" required>
+                            <input class="form-control" type="date" name="beginningdate" id="beginningdate" min="2019-01-01" max="2019-12-31" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" for="endingdate">Date de fin </label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="date" name="endingdate" id="endingdate" required>
+                            <input class="form-control" type="date" name="endingdate" id="endingdate" min="2019-01-01" max="2019-12-31" required>
                         </div>
                     </div>
                     <div class="row">

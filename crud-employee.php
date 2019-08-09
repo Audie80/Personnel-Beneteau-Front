@@ -6,21 +6,21 @@
 
                 <form id="addEmployeeForm">
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" for="lastname">Nom </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-3 col-lg-2 col-form-label" for="lastname">Nom </label>
+                        <div class="col-sm-9 col-lg-10">
                             <input class="form-control" type="text" name="lastname" id="lastname" required>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" for="firstname">Prénom </label>
-                        <div class="col-sm-10">
+                        <label class="col-sm-3 col-lg-2 col-form-label" for="firstname">Prénom </label>
+                        <div class="col-sm-9 col-lg-10">
                             <input class="form-control" type="text" name="firstname" id="firstname" required>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" for="birthdate">Date de naissance </label>
-                        <div class="col-sm-10">
-                            <input class="form-control" type="date" name="birthdate" id="birthdate" required>
+                        <label class="col-sm-3 col-lg-2 col-form-label" for="birthdate">Date de naissance </label>
+                        <div class="col-sm-9 col-lg-10">
+                            <input class="form-control" type="date" name="birthdate" id="birthdate" min="1950-01-01" max="2003-12-31" required>
                         </div>
                     </div>
                     <div class="row">

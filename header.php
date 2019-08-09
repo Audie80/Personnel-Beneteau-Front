@@ -25,8 +25,13 @@
   <![endif] -->
 
     <header class="mb-5">
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 fixed-top shadow-sm">
-          <img src="" alt="Logo de l'entreprise Beneteau">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white mb-4 fixed-top shadow-sm">
+          <a class="navbar-brand" href="#"><img src="" alt="Logo de l'entreprise Beneteau"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarToggler">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="employees.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -44,9 +49,10 @@
                 <a class="nav-link disabled">Clients</a>
               </li>
             </ul>
-          <a href="/personnel-beneteau" class="btn btn-info font-weight-bold ml-5" role="button">Retour à l'accueil</a>
+            <a href="/personnel-beneteau-front" class="btn btn-info font-weight-bold ml-5" role="button">Retour à l'accueil</a>
+          </div>
         </nav>
     </header>
 
-    <section class="container-fluid mt-5 pt-4">
+    <section class="container-fluid my-5 py-4">
       <div class="container-fluid">

@@ -4,11 +4,11 @@
         <div class="card shadow-sm border-light">
             <div class="card-body">
                 <div class="row mb-2">
-                    <div class="col">
+                    <div class="col-sm-6">
                         <h1>Liste du personnel</h1>
                     </div>
-                    <div class="col d-flex align-items-center justify-content-end">
-                        <a href="crud-employee.php" class="btn btn-info font-weight-bold" role="button">Création d'un personnel</a>
+                    <div class="col-sm-6 d-flex align-items-center justify-content-end">
+                        <a href="crud-employee.php" class="btn btn-info font-weight-bold" role="button">Ajouter un personnel</a>
                     </div>
                 </div>
 

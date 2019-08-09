@@ -3,30 +3,31 @@
         <div class="card shadow-sm border-light">
             <div class="card-body">
                 <div class="row mb-2">
-                    <h1 class="col-sm-6 ml-2">Planning des congés</h1>
+                    <h1 class="col-lg-6">Planning des congés</h1>
 
-                    <div class="col-sm-6 row d-flex align-content-center justify-content-end">
-                        <!-- Liste déroulante -->
-                        <label class="col-sm-4 col-form-label" for="month">Filtrer par : </label>
-                        <div class="col-sm-8">
-                            <select class="form-control" name="month" id="month">
-                                <option value="">-- Année 2019 --</option>
-                                <option value="01">Janvier</option>
-                                <option value="02">Février</option>
-                                <option value="03">Mars</option>
-                                <option value="04">Avril</option>
-                                <option value="05">Mai</option>
-                                <option value="06">Juin</option>
-                                <option value="07">Juillet</option>
-                                <option value="08">Août</option>
-                                <option value="09">Septembre</option>
-                                <option value="10">Octobre</option>
-                                <option value="11">Novembre</option>
-                                <option value="12">Décembre</option>
-                            </select>
+                    <div class="col-lg-6">
+                        <div class="row d-flex align-content-center justify-content-end">
+                            <!-- Liste déroulante -->
+                            <label class="col-sm-4 col-form-label" for="month">Filtrer par : </label>
+                            <div class="col-sm-8">
+                                <select class="form-control" name="month" id="month">
+                                    <option value="">-- Année 2019 --</option>
+                                    <option value="01">Janvier</option>
+                                    <option value="02">Février</option>
+                                    <option value="03">Mars</option>
+                                    <option value="04">Avril</option>
+                                    <option value="05">Mai</option>
+                                    <option value="06">Juin</option>
+                                    <option value="07">Juillet</option>
+                                    <option value="08">Août</option>
+                                    <option value="09">Septembre</option>
+                                    <option value="10">Octobre</option>
+                                    <option value="11">Novembre</option>
+                                    <option value="12">Décembre</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                    
                 </div>
 
                 <!-- Tableau des congés -->

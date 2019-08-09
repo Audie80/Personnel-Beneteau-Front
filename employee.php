@@ -1,11 +1,11 @@
 <?php include('header.php'); ?>
     
-        <div class="row mb-4">
-            <div class="col ml-3">
+        <div class="row mb-4 pt-2">
+            <div class="col-sm-6">
                 <h1>Fiche personnel</h1>
             </div>
-            <div class="col d-flex align-items-center pt-2">
-                <div class="card text-center shadow-sm border-light" style="width: 40vw;">
+            <div class="col-sm-6">
+                <div class="card text-center shadow-sm border-light"">
                     <div class="card-body">
                         <h2 class="card-title" id="nameInfo"></h2>
                         <p class="card-text" id="birthDateInfo"></p>
@@ -19,32 +19,36 @@
             <div class="card-body">
 
                 <div class="row mb-2">
-                    <h2 class="col-sm-6 ml-2">Planning de ses congés</h2>
+                    <h2 class="col-lg-5">Planning de ses congés</h2>
 
-                    <div class="col-sm-4 row d-flex align-content-center justify-content-end">
-                        <!-- Liste déroulante -->
-                        <label class="col-sm-4 col-form-label" for="month" class="mr-2">Filtrer par : </label>
-                        <div class="col-sm-8">
-                            <select class="form-control" name="month" id="month">
-                                <option value="">-- Année 2019 --</option>
-                                <option value="01">Janvier</option>
-                                <option value="02">Février</option>
-                                <option value="03">Mars</option>
-                                <option value="04">Avril</option>
-                                <option value="05">Mai</option>
-                                <option value="06">Juin</option>
-                                <option value="07">Juillet</option>
-                                <option value="08">Août</option>
-                                <option value="09">Septembre</option>
-                                <option value="10">Octobre</option>
-                                <option value="11">Novembre</option>
-                                <option value="12">Décembre</option>
-                            </select>
+                    <div class="col-md-9 col-lg-4">
+                        <div class="row d-flex align-items-center justify-content-end">
+                            <!-- Liste déroulante -->
+                            <label class="col-sm-4 col-form-label" for="month" class="mr-2">Filtrer par : </label>
+                            <div class="col-sm-8">
+                                <select class="form-control" name="month" id="month">
+                                    <option value="">-- Année 2019 --</option>
+                                    <option value="01">Janvier</option>
+                                    <option value="02">Février</option>
+                                    <option value="03">Mars</option>
+                                    <option value="04">Avril</option>
+                                    <option value="05">Mai</option>
+                                    <option value="06">Juin</option>
+                                    <option value="07">Juillet</option>
+                                    <option value="08">Août</option>
+                                    <option value="09">Septembre</option>
+                                    <option value="10">Octobre</option>
+                                    <option value="11">Novembre</option>
+                                    <option value="12">Décembre</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="col-sm-2 d-flex align-items-center justify-content-end">
-                        <a href="crud-leave.php" class="btn btn-info font-weight-bold" role="button">Ajouter un congé</a>
+                    <div class="col-md-3 col-lg-3">
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <a href="crud-leave.php" class="btn btn-info font-weight-bold" role="button">Ajouter un congé</a>
+                        </div>
                     </div>
                 </div>
 
@@ -158,10 +162,12 @@
                 </table>
 
                 <!-- Popup de modification d'un congé -->
-                <div class="form-popup" id="formLeave">
-                        <span id="popupCreateButton" style="cursor:pointer">Ajouter</span>
-                        <span id="popupEditButton" style="cursor:pointer">Modifier</span>
-                        <span id="popupDeleteButton" style="cursor:pointer">Supprimer</span>
+                <div class="row d-flex justify-content-center">
+                    <div class="collapse" id="form-popup">
+                        <a class="btn btn-info font-weight-bold" role="button" id="popupCreateButton">Ajouter</a>
+                        <a class="btn btn-info font-weight-bold" role="button" id="popupEditButton">Modifier</a>
+                        <a class="btn btn-info font-weight-bold" role="button" id="popupDeleteButton">Supprimer</a>
+                    </div>
                 </div>
             </div>
         </div>

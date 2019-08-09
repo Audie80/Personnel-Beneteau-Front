@@ -1,7 +1,4 @@
 {
-    // !!! Vérifier que la date de fin est après la date de début !!!
-    // !!! Vérifier qu'il n'y a pas déjà un congé à cette date quand on en crée un !!!
-
     //Récupération des id
     let idEmployeeSelected = sessionStorage.getItem('idEmployee');
     let idLeaveSelected = sessionStorage.getItem('idLeave');
@@ -25,9 +22,11 @@
 
             //On efface l'id et le congé sélectionné
             sessionStorage.setItem('idLeave', null);
-            sessionStorage.setItem('leaveDate', null);
             idLeaveSelected = null;
             leaveSelected = [];
+            
+        } else {
+            sessionStorage.setItem('leaveDate', null);
         }
 
         // Redirection
@@ -45,50 +44,59 @@
         };
         if (leave.BeginningDate && leave.EndingDate) {
 
-            //Si pas de congé sélectionné, on est en ajout
-            if (leaveSelected.length === 0) {
+            //Vérifier que la date de fin est postérieure à la date de début
+            if (leave.EndingDate >= leave.BeginningDate) {
 
-                // Communication avec l'API - Ajout d'un congé
-                myInit.method = 'POST';
-                Object.defineProperty(myInit, 'body', {
-                    value: JSON.stringify(leave)
-                });
-                let urlPost = baseUrl + 'employees/' + idEmployeeSelected + '/leave';
-                fetch(urlPost, myInit).then(response => response.json())
-                    .then(result => result.send('Création effectuée'));
+                //Si pas de congé sélectionné, on est en ajout
+                if (leaveSelected.length === 0) {
 
-                alert('Création effectuée');
+                    // Communication avec l'API - Ajout d'un congé
+                    myInit.method = 'POST';
+                    Object.defineProperty(myInit, 'body', {
+                        value: JSON.stringify(leave)
+                    });
+                    let urlPost = baseUrl + 'employees/' + idEmployeeSelected + '/leave';
+                    fetch(urlPost, myInit).then(response => response.json())
+                        .then(result => result.send('Création effectuée'));
 
-                //Sinon on est en modification
+                    if (confirm('Création effectuée, souhaitez-vous ajouter un autre congé ?')) {
+                        document.location = './crud-leave.php';
+                    };
+
+                    //Sinon on est en modification
+                } else {
+
+                    // Communication avec l'API - Update d'un congé
+                    myInit.method = 'PUT';
+                    Object.defineProperty(myInit, 'body', {
+                        value: JSON.stringify(leave)
+                    });
+                    let urlPut = baseUrl + 'employees/' + idEmployeeSelected + '/leaves/' + idLeaveSelected + '/update';
+                    fetch(urlPut, myInit).then(response => response.json())
+                        .then(result => result.send('Modification effectuée'));
+
+                    alert('Modification effectuée');
+
+                    //On efface l'id et le congé sélectionné
+                    sessionStorage.setItem('idLeave', null);
+                    sessionStorage.setItem('leaveDate', null);
+                    idLeaveSelected = null;
+                    leaveSelected = [];
+                }
+
+                // Redirection vers la fiche de l'employé au bout d'un petit délai pour laisser le temps au fetch de se terminer
+                function pageRedirect() {
+                    let delay = 400; // time in milliseconds
+
+                    setTimeout(function () {
+                        document.location = './employee.php';
+                    }, delay);
+                }
+                pageRedirect();
+
             } else {
-
-                // Communication avec l'API - Update d'un congé
-                myInit.method = 'PUT';
-                Object.defineProperty(myInit, 'body', {
-                    value: JSON.stringify(leave)
-                });
-                let urlPut = baseUrl + 'employees/' + idEmployeeSelected + '/leaves/' + idLeaveSelected + '/update';
-                fetch(urlPut, myInit).then(response => response.json())
-                    .then(result => result.send('Modification effectuée'));
-
-                alert('Modification effectuée');
-
-                //On efface l'id et le congé sélectionné
-                sessionStorage.setItem('idLeave', null);
-                sessionStorage.setItem('leaveDate', null);
-                idLeaveSelected = null;
-                leaveSelected = [];
+                alert('La date de fin doit être postérieure à la date de début');
             }
-
-            // Redirection vers la fiche de l'employé au bout d'un petit délai pour laisser le temps au fetch de se terminer
-            function pageRedirect() {
-                let delay = 400; // time in milliseconds
-
-                setTimeout(function () {
-                    document.location = './employee.php';
-                }, delay);
-            }
-            pageRedirect();
 
         } else {
             alert('Veuillez remplir tous les champs');

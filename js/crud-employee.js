@@ -53,7 +53,9 @@
                 fetch(urlPost, myInit).then(response => response.json())
                     .then(result => result.send('Création effectuée'));
 
-                alert('Création effectuée');
+                if (confirm('Création effectuée, souhaitez-vous ajouter un autre employé ?')) {
+                    document.location = './crud-employee.php';
+                };
 
             //Sinon on est en modification
             } else {
