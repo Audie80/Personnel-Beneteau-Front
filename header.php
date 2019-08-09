@@ -24,7 +24,7 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif] -->
 
-    <header class="mb-5">
+    <header class="mb-5 pb-5">
         <nav class="navbar navbar-expand-lg navbar-light bg-white mb-4 fixed-top shadow-sm">
           <a class="navbar-brand" href="https://www.beneteau.com/fr"><img src="img/logo_header_dark-blue.svg" alt="Logo de l'entreprise Beneteau"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,5 +55,5 @@
         </nav>
     </header>
 
-    <section class="container-fluid my-5 py-4">
+    <section class="container-fluid my-5 py-3">
       <div class="container-fluid">
